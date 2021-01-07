@@ -752,18 +752,9 @@
 // import "../assets/js/main";
 export default {
   created: function() {
-    // debugger
+      console.log('client');
+    debugger
     if(process.client) {
-      // console.log('client');
-      // let setBG = document.getElementsByClassName('set-bg');
-      // console.log($);
-      // if(setBG) {
-      //   for (let i = 0; i <= setBG.length; i++) {
-      //     let bg = setBG[i].getAttribute('data-setbg');
-      //     setBG[i].style.backgroundImage = `url('${bg}')`
-      //     console.log(setBG[i]);
-      //   }
-      // }
       $('.set-bg').each(function () {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(/_nuxt' + bg + ')');

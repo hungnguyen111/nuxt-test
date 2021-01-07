@@ -1,8 +1,13 @@
+import path from 'path';
+import fs from 'fs';
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   server: {
     port: 80, // default: 3000
-    host: '0.0.0.0' // default: localhost
+    host: '0.0.0.0', // default: localhost
+    key: fs.readFileSync(path.resolve(__dirname, "private.key.pem")),
+    cert: fs.readFileSync(path.resolve(__dirname, "intermediate.cert.pem"))
   },
   head: {
     title: 'nuxt-test',
